@@ -6,7 +6,7 @@ const session = require('express-session')
 const mongoose = require('mongoose')
 const app = express()
 var path = require('path')
-const passport = require('../auth')
+const passport = require('./auth')
 
 const PORT = process.env.PORT || 4000
 
