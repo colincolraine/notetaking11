@@ -2,11 +2,11 @@ const express = require('express')
 const bodyParser = require('body-parser')
 //start new session stuff
 const session = require('express-session')
-//const store = new session.MemoryStore()
 //end new session stuff
 const mongoose = require('mongoose')
 const app = express()
 var path = require('path')
+const passport = require('../auth')
 
 const PORT = process.env.PORT || 4000
 
@@ -22,10 +22,10 @@ mongoose.connect(`mongodb+srv://${username}:${password}@notetaking2.7q2bv.mongod
 
 //start new session stuff
 app.use(session({
-    secret: 'some secret'
+    secret: 'some secret',
     //cookie: {maxAge: 30000},
-    //saveUninitialized: false,
-    //store
+    saveUninitialized: false,
+    resave: false
 }))
 app.use(passport.initialize())
 app.use(passport.session())
