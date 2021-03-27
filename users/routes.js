@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs')
 const Chance = require('chance')
 const chance = new Chance()
 var path = require('path')
+const passport = require('../auth')
 
 
 router.get('/dashboard', (req, res) => {
