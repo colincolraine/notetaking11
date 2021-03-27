@@ -24,7 +24,7 @@ mongoose.connect(`mongodb+srv://${username}:${password}@notetaking2.7q2bv.mongod
 app.use(session({
     secret: 'some secret',
     //cookie: {maxAge: 30000},
-    saveUninitialized: false,
+    saveUninitialized: true,
     resave: false
 }))
 app.use(passport.initialize())

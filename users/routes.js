@@ -19,6 +19,7 @@ router.get('/dashboard', (req, res) => {
 
 router.post('/login',
     passport.authenticate('local-login'),
+    console.log(req.sessionID),
     (req, res) => {
     res.redirect('/users/dashboard')
     }
